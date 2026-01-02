@@ -34,9 +34,9 @@ weights = np.array([custom_weights[s] for s in stocks])
 #print(weights.sum())  # check that weights ~= 1.0
 
 # %%
-import yfinance as yf
 
 # importing data from yahoo finance
+import yfinance as yf
 def getData(stocks, start, end):
     data = yf.download(stocks, start=start, end=end, auto_adjust=True,progress=False)['Close']  # downloading data
     returns = data.pct_change().dropna()
